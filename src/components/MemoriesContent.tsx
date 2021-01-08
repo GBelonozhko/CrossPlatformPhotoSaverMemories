@@ -17,6 +17,7 @@ import {
 import { add } from "ionicons/icons";
 import React from "react";
 import { Memory } from "../data/memories-context";
+import FixedBottomFab from "./FixeBottomFab";
 import MemoriesList from "./MemoriesList";
 
 const MemoriesContent: React.FC<{
@@ -49,11 +50,7 @@ const MemoriesContent: React.FC<{
           )}
           <MemoriesList items={props.memories} />
           {!isPlatform("ios") && (
-            <IonFab vertical='bottom' horizontal='end'>
-              <IonFabButton routerLink='/new-memory'>
-                <IonIcon icon={add} />
-              </IonFabButton>
-            </IonFab>
+            <FixedBottomFab/>
           )}
         </IonGrid>
       </IonContent>
